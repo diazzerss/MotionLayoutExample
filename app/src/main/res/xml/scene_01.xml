@@ -5,33 +5,30 @@
     <Transition
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@+id/start"
-        motion:duration="1000">
+        motion:duration="500">
         <OnSwipe
             motion:dragDirection="dragUp"
-            motion:touchAnchorId="@+id/button"
+            motion:touchAnchorId="@+id/rv"
             motion:touchAnchorSide="top" />
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
         <Constraint
-            android:id="@+id/button"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_marginStart="8dp"
-            motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             motion:layout_constraintEnd_toEndOf="parent"
-             />
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/toolbar" />
 
-        <Constraint android:id="@+id/toolbar"
+        <Constraint
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            motion:layout_constraintStart_toStartOf="parent"
+            android:alpha="1"
             motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent">
-            <CustomAttribute
-                motion:customColorValue="#FF3F51B5"
-                motion:attributeName="backgroundColor" />
 
         </Constraint>
 
@@ -40,23 +37,22 @@
 
     <ConstraintSet android:id="@+id/end">
         <Constraint
-            android:id="@+id/button"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_marginEnd="8dp"
-            motion:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintEnd_toEndOf="parent" />
+            motion:layout_constraintTop_toTopOf="@id/toolbar" />
 
-        <Constraint android:id="@+id/toolbar"
+        <Constraint
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            motion:layout_constraintStart_toStartOf="parent"
+            android:alpha="0.8"
             motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent">
-            <CustomAttribute
-                motion:customColorValue="#803F51B5"
-                motion:attributeName="backgroundColor" />
+
 
         </Constraint>
 
